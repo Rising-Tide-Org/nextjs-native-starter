@@ -1,0 +1,95 @@
+.dot-flashing-animation {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #fa6984;
+  color: #fa6984;
+  animation: dot-flashing-animation 1s infinite linear alternate;
+  animation-delay: 0.3s;
+}
+.dot-flashing-animation::before,
+.dot-flashing-animation::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-flashing-animation::before {
+  left: -12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #fa6984;
+  color: #fa6984;
+  animation: dot-flashing-animation 1s infinite alternate;
+  animation-delay: 0s;
+}
+.dot-flashing-animation::after {
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #fa6984;
+  color: #fa6984;
+  animation: dot-flashing-animation 1s infinite alternate;
+  animation-delay: 0.6s;
+}
+
+@keyframes dot-flashing-animation {
+  0% {
+    background-color: #fa6984;
+  }
+  50%,
+  100% {
+    background-color: #c8c8c8;
+  }
+}
+
+.dot-flashing-animation-dark {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #fa6984;
+  color: #fa6984;
+  animation: dot-flashing-animation-dark 1s infinite linear alternate;
+  animation-delay: 0.3s;
+}
+.dot-flashing-animation-dark::before,
+.dot-flashing-animation-dark::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-flashing-animation-dark::before {
+  left: -12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #fa6984;
+  color: #fa6984;
+  animation: dot-flashing-animation-dark 1s infinite alternate;
+  animation-delay: 0s;
+}
+.dot-flashing-animation-dark::after {
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #fa6984;
+  color: #fa6984;
+  animation: dot-flashing-animation-dark 1s infinite alternate;
+  animation-delay: 0.6s;
+}
+
+@keyframes dot-flashing-animation-dark {
+  0% {
+    background-color: #fa6984;
+  }
+  50%,
+  100% {
+    background-color: #2c2a2a;
+  }
+}

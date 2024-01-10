@@ -1,0 +1,52 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+/test-results
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+public/sw.*
+public/workbox-*
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*
+.env
+
+# vercel
+.vercel
+deployment-url.txt
+
+# Sentry
+.sentryclirc
+
+# Sentry
+next.config.original.js
+
+# TS
+tsconfig.tsbuildinfo
+
+# IDE
+.vscode
+
+# Firebase
+*.log

@@ -1,0 +1,101 @@
+.signal-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px; /* Adjust as needed */
+  width: 25px; /* Adjust as needed */
+}
+
+.no-signal .signal-bar {
+  animation: none;
+  background-color: gray;
+  height: 25%;
+}
+
+.signal-bar {
+  width: 2px;
+  height: 50%;
+  background-color: teal;
+  animation: signal 1s infinite;
+  border-radius: 9px;
+}
+
+@keyframes signal1 {
+  0%,
+  100% {
+    transform: scaleY(0.2);
+    background-color: lightblue;
+  }
+  50% {
+    transform: scaleY(0.5);
+    background-color: dodgerblue;
+  }
+}
+
+@keyframes signal2 {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+    background-color: lightblue;
+  }
+  50% {
+    transform: scaleY(0.7);
+    background-color: cornflowerblue;
+  }
+}
+
+@keyframes signal3 {
+  0%,
+  100% {
+    transform: scaleY(0.5);
+    background-color: lightblue;
+  }
+  50% {
+    transform: scaleY(1);
+    background-color: deepskyblue;
+  }
+}
+
+@keyframes signal4 {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+    background-color: lightblue;
+  }
+  50% {
+    transform: scaleY(0.7);
+    background-color: cornflowerblue;
+  }
+}
+
+@keyframes signal5 {
+  0%,
+  100% {
+    transform: scaleY(0.2);
+    background-color: lightblue;
+  }
+  50% {
+    transform: scaleY(0.5);
+    background-color: dodgerblue;
+  }
+}
+
+.bar1 {
+  animation: signal1 1s infinite;
+}
+
+.bar2 {
+  animation: signal2 0.8s infinite;
+}
+
+.bar3 {
+  animation: signal3 1.2s infinite;
+}
+
+.bar4 {
+  animation: signal4 1.4s infinite;
+}
+
+.bar5 {
+  animation: signal5 1.6s infinite;
+}

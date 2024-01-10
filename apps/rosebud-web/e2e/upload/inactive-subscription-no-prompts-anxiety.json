@@ -1,0 +1,1106 @@
+{
+  "formatName": "dexie",
+  "formatVersion": 1,
+  "data": {
+    "databaseName": "rosebud",
+    "databaseVersion": 6,
+    "tables": [
+      { "name": "entries", "schema": "++id,date,day", "rowCount": 25 },
+      { "name": "summaries", "schema": "++id,date", "rowCount": 2 },
+      { "name": "user", "schema": "++id", "rowCount": 1 },
+      { "name": "goals", "schema": "++id", "rowCount": 4 },
+      { "name": "prompts", "schema": "++id,type", "rowCount": 21 }
+    ],
+    "data": [
+      {
+        "tableName": "entries",
+        "inbound": true,
+        "rows": [
+          {
+            "questions": [
+              [
+                "🌹 What's one win, small or big, you had today?",
+                "I'm grateful for a tasty breakfast today with my partner",
+                "rose"
+              ],
+              [
+                "🥀 What's been a source of stress for you today?",
+                "I got sick today and slept pretty badly throughout the night",
+                "thorn"
+              ],
+              [
+                "🌱 What's something new or interesting that you learned today?",
+                "I am excited for my trip",
+                "bud"
+              ],
+              [
+                "How can you incorporate more moments of gratitude into your daily routine, like the tasty breakfast you shared with your partner?",
+                "I can set google reminders",
+                null
+              ]
+            ],
+            "commitments": [
+              "🗓️ Set up recurring gratitude reminders",
+              "📆 `Pause and be thankful` reminder"
+            ],
+            "date": "2023-03-24T22:52:49.579Z",
+            "day": "2023-03-24T07:00:00.000Z",
+            "entities": {
+              "emotions": [
+                ["happy", "😊"],
+                ["excited", "😃"],
+                ["scared", "😨"]
+              ],
+              "people": [{ "name": "Partner", "relation": "Partner" }],
+              "places": ["Europe"],
+              "topics": ["#travel", "#reminders", "#breakfast", "#sickness"]
+            },
+            "id": 2,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "questions.1": "arrayNonindexKeys",
+              "questions.2": "arrayNonindexKeys",
+              "questions.3": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.emotions.0": "arrayNonindexKeys",
+              "entities.emotions.1": "arrayNonindexKeys",
+              "entities.emotions.2": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "🌹 What's something you're grateful for today?",
+                "Today weather is perfect i am so happy to see the sun and it makes me feel alive and fresh, my health also seem to get better, my partner is uplifted as well",
+                "rose"
+              ],
+              [
+                "🥀 What was the most challenging part of your day and why?",
+                "I still have remanence of my weekend sickness and overall feel a bit tired",
+                "thorn"
+              ],
+              [
+                "🌱 What new idea or opportunity emerged today?",
+                "I want to go travel as soon as possible, its hard to be productive in a calm environment",
+                "bud"
+              ]
+            ],
+            "commitments": [],
+            "date": "2023-03-27T21:05:53.504Z",
+            "day": "2023-03-27T07:00:00.000Z",
+            "entities": {
+              "emotions": [
+                ["happy", "😃"],
+                ["fresh", "😋"],
+                ["alive", "😝"],
+                ["uplifted", "😁"],
+                ["tired", "😩"]
+              ],
+              "people": [{ "name": "Partner", "relation": "Romantic" }],
+              "places": [],
+              "topics": ["#weather", "#productivity", "#travel"]
+            },
+            "id": 3,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "questions.1": "arrayNonindexKeys",
+              "questions.2": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.emotions.0": "arrayNonindexKeys",
+              "entities.emotions.1": "arrayNonindexKeys",
+              "entities.emotions.2": "arrayNonindexKeys",
+              "entities.emotions.3": "arrayNonindexKeys",
+              "entities.emotions.4": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What steps can I take to improve my sleep quality?",
+                "I can sleep more and try not to watch screen 1 hour before the bed",
+                "personal"
+              ],
+              [
+                "In what ways does your reliance on screens before bedtime affect your sleep quality?",
+                "Screens are not recommended to be looked at before the bed",
+                null
+              ],
+              [
+                "How successful have you been in implementing your sleep quality plan?",
+                "It is hard because things change every day",
+                null
+              ],
+              [
+                "How can I make adjustments to my sleep routine to accommodate life's unpredictability?",
+                "I can be stoic and go to sleep at the same time regardless of anything",
+                null
+              ]
+            ],
+            "commitments": [
+              "⏰ Set an alarm for bedtime",
+              "🚫 Avoid screens an hour before bed",
+              "🛌 Aim for 8 hours of sleep each night",
+              "🔆 Limit screen time 1 hour before bed",
+              "⏰ Set a consistent sleep time",
+              "💤 Go to bed earlier"
+            ],
+            "date": "2023-03-27T21:51:33.360Z",
+            "day": "2023-03-27T07:00:00.000Z",
+            "entities": {
+              "emotions": [
+                ["afraid", "😨"],
+                ["stoic", "😐"]
+              ],
+              "people": [],
+              "places": [],
+              "topics": ["#sleep", "#screen"]
+            },
+            "id": 4,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "questions.1": "arrayNonindexKeys",
+              "questions.2": "arrayNonindexKeys",
+              "questions.3": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.emotions.0": "arrayNonindexKeys",
+              "entities.emotions.1": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "How can I prioritize self-care while preparing for my Europe trip?",
+                "I can take frequent breaks during my work, drink a lot of water and go for a walk at least once per day",
+                "personal"
+              ]
+            ],
+            "commitments": [],
+            "date": "2023-03-27T22:11:21.701Z",
+            "day": "2023-03-27T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": ["#work", "#hydration", "#exercise"]
+            },
+            "id": 5,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "🌹 What's one win, small or big, you had today?",
+                "Today weather is perfect i am so happy to see the sun and it makes me feel alive and fresh, my health also seem to get better, my partner is uplifted as well\n",
+                "rose"
+              ],
+              [
+                "🥀 What challenge or obstacle did you face today?",
+                "I still have remanence of my weekend sickness and overall feel a bit tired\n",
+                "thorn"
+              ],
+              [
+                "🌱 Did you experience any growth or inspiration today?",
+                "I want to go travel as soon as possible, its hard to be productive in a calm environment",
+                "bud"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": true,
+            "date": "2023-03-28T18:42:19.003Z",
+            "day": "2023-03-28T07:00:00.000Z",
+            "entities": {
+              "emotions": [
+                ["happy", "😊"],
+                ["tired", "😩"]
+              ],
+              "people": [{ "name": "Partner", "relation": "Partner" }],
+              "places": [],
+              "topics": [
+                "#weather",
+                "#sun",
+                "#health",
+                "#travel",
+                "#productivity"
+              ]
+            },
+            "id": 7,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "questions.1": "arrayNonindexKeys",
+              "questions.2": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.emotions.0": "arrayNonindexKeys",
+              "entities.emotions.1": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "🌹 What's something you're grateful for today?",
+                "I'm grateful for having supportive friends and colleagues in my life.\n\n",
+                "rose"
+              ],
+              [
+                "🥀 What challenge or obstacle did you face today?",
+                "I faced a difficult deadline at work today, but was able to manage my time effectively and complete the task.",
+                "thorn"
+              ],
+              [
+                "🌱 What new idea or opportunity emerged today?",
+                "I came up with a new idea for a personal project that could potentially turn into a side hustle.",
+                "bud"
+              ],
+              [
+                "How can I continue to cultivate relationships with supportive friends and colleagues in my life?",
+                "One way to cultivate supportive relationships is to actively reach out to them, show interest in their lives, and offer support when needed. Participating in social events, joining clubs or organizations related to your interests, and maintaining open communication can also help build stronger relationships.\n\n\n\n",
+                null
+              ],
+              [
+                "How can I actively show interest in my supportive friends' lives?",
+                "You can actively show interest in your supportive friends' lives by asking them questions about their interests, hobbies, and goals, actively listening to their responses, and following up with them regularly. You can also offer your support and help in achieving their goals and celebrating their successes. Remember to prioritize spending quality time with them and being present in the moment.\n\n\n\n",
+                null
+              ]
+            ],
+            "commitments": [],
+            "isDaily": true,
+            "date": "2023-04-04T00:59:39.584Z",
+            "day": "2023-04-03T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": [
+                "#gratitude",
+                "#worklifebalance",
+                "#personalproject",
+                "#relationships",
+                "#communication"
+              ]
+            },
+            "id": 8,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "questions.1": "arrayNonindexKeys",
+              "questions.2": "arrayNonindexKeys",
+              "questions.3": "arrayNonindexKeys",
+              "questions.4": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "🌹 What's one win, small or big, you had today?",
+                "I'm grateful for being able to spend time in such a nice family as my partners's\n\n",
+                "rose"
+              ],
+              [
+                "🥀 What challenge or obstacle did you face today?",
+                "It was challenging to do my morning routine today\n\n",
+                "thorn"
+              ],
+              [
+                "🌱 What's something you're looking forward to?",
+                "Im looking forward to the end of the day when i meet my friends\n\n",
+                "bud"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": true,
+            "date": "2023-04-05T04:40:34.741Z",
+            "day": "2023-04-04T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [{ "name": "Fer", "relation": "Acquaintance" }],
+              "places": [],
+              "topics": ["#gratitude", "#socialmedia", "#productivity"]
+            },
+            "id": 9,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "questions.1": "arrayNonindexKeys",
+              "questions.2": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "I'm feeling anxious about my sickness, what can I do to take care of myself?",
+                "ew",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-06T14:23:14.094Z",
+            "day": "2023-04-06T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 10,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What techniques have worked for me in the past to manage anxiety?",
+                "greaaqwĘ",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-06T14:23:42.703Z",
+            "day": "2023-04-06T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 11,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "How can I reframe my thoughts about my upcoming trip to Europe to ease my anxiety?",
+                "FSDfwacxv",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-06T14:23:50.738Z",
+            "day": "2023-04-06T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 12,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "Can I practice mindfulness or meditation to calm my anxiety?",
+                "rfevdcs",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-06T14:23:56.007Z",
+            "day": "2023-04-06T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 13,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What self-care activities can I do to reduce my anxiety levels?",
+                "yth",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-06T14:24:00.491Z",
+            "day": "2023-04-06T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 14,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "How can I practice self-compassion when my anxiety is overwhelming?",
+                "xcva",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-06T14:24:05.165Z",
+            "day": "2023-04-06T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 15,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What boundaries can I set to decrease the sources of stress in my life and improve my overall anxiety levels?",
+                "qwe",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-06T14:24:10.084Z",
+            "day": "2023-04-06T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 16,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What techniques have worked for me in the past to manage anxiety?",
+                "gre",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-06T14:23:18.226Z",
+            "day": "2023-04-06T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 17,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              ["🌹 What's something you're grateful for today?", "1", "rose"],
+              ["🥀 What was challenging for you today?", "2", "thorn"],
+              ["🌱 What's something you're looking forward to?", "3", "bud"]
+            ],
+            "commitments": [],
+            "isDaily": true,
+            "date": "2023-04-19T18:18:12.242Z",
+            "day": "2023-04-19T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 20,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "questions.1": "arrayNonindexKeys",
+              "questions.2": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What aspects of your life make you feel grateful? How can you cultivate more gratitude?",
+                "sdf",
+                "personal"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-19T18:18:25.606Z",
+            "day": "2023-04-19T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 21,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "🌹 What's one positive thing that happened today?",
+                "asdf",
+                "rose"
+              ],
+              ["🥀 What was challenging for you today?", "asf", "thorn"],
+              [
+                "🌱 Did you experience any growth or inspiration today?",
+                "afd",
+                "bud"
+              ],
+              [
+                "How can I build upon the positive thing that happened today?",
+                "another one\n",
+                null
+              ],
+              [
+                "What steps can I take to continue building upon positive moments and experiences?",
+                "safads",
+                null
+              ],
+              [
+                "What specific actions can I take to create more positive experiences in my life?",
+                "asdf",
+                null
+              ]
+            ],
+            "commitments": [],
+            "isDaily": true,
+            "date": "2023-04-25T23:01:25.445Z",
+            "day": "2023-04-25T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 22,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "questions.1": "arrayNonindexKeys",
+              "questions.2": "arrayNonindexKeys",
+              "questions.3": "arrayNonindexKeys",
+              "questions.4": "arrayNonindexKeys",
+              "questions.5": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What triggers my anxiety and how can I avoid those triggers?",
+                "asdf",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-26T20:53:39.592Z",
+            "day": "2023-04-26T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 23,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "How can I challenge negative thoughts and replace them with positive ones?",
+                "asfref",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-26T20:53:45.273Z",
+            "day": "2023-04-26T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 24,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What relaxation techniques have worked for me in the past?",
+                "gre",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-26T20:53:50.737Z",
+            "day": "2023-04-26T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 25,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "How can I prioritize self-care activities in my daily routine?",
+                "zcxvzcx",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-26T20:53:56.440Z",
+            "day": "2023-04-26T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 26,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What support systems do I have in place and how can I utilize them?",
+                "refwd",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-26T20:54:04.628Z",
+            "day": "2023-04-26T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 27,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "How can I break down overwhelming tasks into smaller, manageable ones?",
+                "ddffs",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-26T20:54:10.049Z",
+            "day": "2023-04-26T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 28,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          },
+          {
+            "questions": [
+              [
+                "What affirmations or mantras can I use to calm my anxious thoughts?",
+                "btvred",
+                "anxiety"
+              ]
+            ],
+            "commitments": [],
+            "isDaily": false,
+            "date": "2023-04-26T20:54:15.745Z",
+            "day": "2023-04-26T07:00:00.000Z",
+            "entities": {
+              "emotions": [],
+              "people": [],
+              "places": [],
+              "topics": []
+            },
+            "id": 29,
+            "$types": {
+              "questions": "arrayNonindexKeys",
+              "questions.0": "arrayNonindexKeys",
+              "commitments": "arrayNonindexKeys",
+              "entities.emotions": "arrayNonindexKeys",
+              "entities.people": "arrayNonindexKeys",
+              "entities.places": "arrayNonindexKeys",
+              "entities.topics": "arrayNonindexKeys"
+            }
+          }
+        ]
+      },
+      {
+        "tableName": "summaries",
+        "inbound": true,
+        "rows": [
+          {
+            "date": 1680724940458,
+            "summary": "Happy Sunday! You have consistently practiced gratitude and reflection this week. From recognizing the support of friends and colleagues, to embracing the sun and travel, to finding solace in a good breakfast with loved ones - your journal entries showcase your appreciation for small moments of joy. On Tuesday, you acknowledged the challenge of stepping away from social media and work to prioritize your mental wellness. Despite these obstacles, you remain optimistic for the future and show a willingness to take action.\n\nThe theme of self-care and health is a thread throughout your writing. You express a desire to improve your sleep quality and prioritize self-care in preparation for your upcoming travels. You have identified ways to adjust your routines to accommodate life's unpredictability, which is a positive step forward. Your openness to learning and growing is evident in your willingness to explore new ideas and opportunities, such as personal projects and side hustles. Keep up the fantastic work! 🌞",
+            "id": 1,
+            "$types": { "date": "date" }
+          },
+          {
+            "date": 1680815435897,
+            "summary": "Happy Sunday! From your journal entries on April 6th, it seems like you've been grappling with anxiety and searching for ways to manage it. Your questions are focused on self-care, boundaries, reframing thoughts, and mindfulness techniques. It's great that you're experimenting with different methods to ease your anxiety and exploring what works best for you. \n\nYour journal entries show a pattern of curiosity and self-reflection, which is an important step towards managing anxiety. It's encouraging to see that you're actively seeking out ways to take care of yourself and decrease stress in your life. Remember to be patient and compassionate with yourself during this process. You're doing the best you can, and it's okay if some techniques don't work for you. Keep exploring and experimenting until you find what works best for you. 🌟",
+            "id": 2,
+            "$types": { "date": "date" }
+          }
+        ]
+      },
+      {
+        "tableName": "user",
+        "inbound": true,
+        "rows": [
+          {
+            "verified": false,
+            "uuid": "00727c73-159a-44df-83ea-413ca2262c2e",
+            "timezone": "America/Los_Angeles",
+            "reminder_hour_local": 21,
+            "subscription": {},
+            "id": 4,
+            "flags": {
+              "onboardingComplete": true,
+              "notificationPromoDismissed": true
+            }
+          }
+        ]
+      },
+      {
+        "tableName": "goals",
+        "inbound": true,
+        "rows": [
+          {
+            "name": "⏰ Set an alarm for bedtime",
+            "completions": [
+              "2023-04-03",
+              "2023-04-04",
+              "2023-04-05",
+              "2023-04-13"
+            ],
+            "createdAt": "2023-03-27",
+            "entryId": 4,
+            "id": 5,
+            "$types": { "completions": "arrayNonindexKeys" }
+          },
+          {
+            "name": "🚫 Avoid screens an hour before bed",
+            "completions": ["2023-04-03", "2023-04-04", "2023-04-05"],
+            "createdAt": "2023-03-27",
+            "entryId": 4,
+            "id": 6,
+            "$types": { "completions": "arrayNonindexKeys" }
+          },
+          {
+            "name": "⏰ Set a consistent sleep time",
+            "completions": ["2023-04-04"],
+            "createdAt": "2023-03-27",
+            "entryId": 4,
+            "id": 9,
+            "$types": { "completions": "arrayNonindexKeys" }
+          },
+          {
+            "name": "💤 Go to bed earlier",
+            "completions": [],
+            "createdAt": "2023-03-27",
+            "entryId": 4,
+            "id": 10,
+            "$types": { "completions": "arrayNonindexKeys" }
+          }
+        ]
+      },
+      {
+        "tableName": "prompts",
+        "inbound": true,
+        "rows": [
+          {
+            "question": "What are my current spending habits?",
+            "type": "finance",
+            "id": 169
+          },
+          {
+            "question": "How can I reduce my monthly expenses?",
+            "type": "finance",
+            "id": 170
+          },
+          {
+            "question": "What financial goals do I want to achieve?",
+            "type": "finance",
+            "id": 171
+          },
+          {
+            "question": "What are some ways to increase my income?",
+            "type": "finance",
+            "id": 172
+          },
+          {
+            "question": "How can I hold myself accountable for sticking to a budget?",
+            "type": "finance",
+            "id": 173
+          },
+          {
+            "question": "What steps can I take to save money each month?",
+            "type": "finance",
+            "id": 174
+          },
+          {
+            "question": "How can I invest my money wisely for long-term financial growth?",
+            "type": "finance",
+            "id": 175
+          },
+          {
+            "question": "What emotions did I feel during my positive moment today?",
+            "type": "personal",
+            "id": 176
+          },
+          {
+            "question": "How did I handle the challenging situation today?",
+            "type": "personal",
+            "id": 177
+          },
+          {
+            "question": "What external factors contributed to my growth or inspiration today?",
+            "type": "personal",
+            "id": 178
+          },
+          {
+            "question": "What internal factors contributed to my growth or inspiration today?",
+            "type": "personal",
+            "id": 179
+          },
+          {
+            "question": "In what ways did my positive moment align with my values?",
+            "type": "personal",
+            "id": 180
+          },
+          {
+            "question": "How can I use what I learned today to improve future challenging situations?",
+            "type": "personal",
+            "id": 181
+          },
+          {
+            "question": "What self-care practices can I incorporate to create more positive experiences in my life?",
+            "type": "personal",
+            "id": 182
+          },
+          {
+            "question": "How do my positive moments and experiences impact my relationships?",
+            "type": "relationship",
+            "id": 183
+          },
+          {
+            "question": "What role do my challenges play in my relationships?",
+            "type": "relationship",
+            "id": 184
+          },
+          {
+            "question": "How can I share my growth and inspiration with those around me?",
+            "type": "relationship",
+            "id": 185
+          },
+          {
+            "question": "What can I do to recognize and appreciate the positive things in my relationships?",
+            "type": "relationship",
+            "id": 186
+          },
+          {
+            "question": "How can I communicate my desire for positive experiences in my relationships?",
+            "type": "relationship",
+            "id": 187
+          },
+          {
+            "question": "What boundaries can I set to ensure healthy relationships?",
+            "type": "relationship",
+            "id": 188
+          },
+          {
+            "question": "How can I show gratitude towards those who positively impact my relationships?",
+            "type": "relationship",
+            "id": 189
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/hooks/dispatch-reminders?key=3b7988f4-fb2b-4a37-bba8-9c4f2eb0394b",
+      "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/hooks/dispatch-reminders-v2?key=3b7988f4-fb2b-4a37-bba8-9c2f2gb03e41",
+      "schedule": "0 * * * *"
+    }
+  ]
+}

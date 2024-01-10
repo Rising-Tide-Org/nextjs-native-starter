@@ -1,6 +1,6 @@
 import { AuthMode } from './common.types'
 
-export const PROD_URL_NO_HTTPS = 'nextjs-native-starter-app.vercel.app'
+export const PROD_URL_NO_HTTPS = 'my.rosebud.app'
 
 export const IS_IN_PRODUCTION_ENVIRONMENT =
   process.env.NEXT_PUBLIC_APP_STAGE !== 'development'
@@ -11,8 +11,9 @@ export const FRONTEND_URL = !IS_IN_PRODUCTION_ENVIRONMENT
   : `https://${PROD_URL_NO_HTTPS}`
 
 // Make sure to change this to your own unique URL
-export const APP_BUNDLE_URL = `next.supertokens.app` // used to create the deep link
+export const APP_BUNDLE_URL = `curio.rosebud.app` // used to create the deep link
 
+// don't think we need this until we add SSO
 export const REDIRECT_URL = !IS_IN_PRODUCTION_ENVIRONMENT
   ? FRONTEND_URL
   : 'https://nextjs-native-starter-app-git-main-robschilderr.vercel.app'
@@ -23,7 +24,7 @@ export const APP_ORIGIN_URLS = [
   'https://localhost',
   'ionic://localhost',
   `ionic://${FRONTEND_URL.split('://')[1]}`,
-  `next.supertokens.app`,
+  `curio.rosebud.app`,
   'capacitor://',
   `capacitor://${FRONTEND_URL.split('://')[1]}`,
   `http://${FRONTEND_URL.split('://')[1]}`,
@@ -31,13 +32,17 @@ export const APP_ORIGIN_URLS = [
 
 export const ALLOWED_CORS_URLS = [
   ...APP_ORIGIN_URLS,
-  'capacitor://nextjs-native.dev',
+  'capacitor://rosebud.app',
+  'capacitor://my.rosebud.app',
   'http://localhost:3000',
   'http://localhost:3001',
-  'https://www.nextjs-native.dev',
-  'https://nextjs-native.dev',
-  'https://nextjs-native-git-main-robschilderr.vercel.app',
+  'https://swell-sable.vercel.app',
+  'https://rosebud.app',
+  'https://my.rosebud.app',
+  'https://www.rosebud.app',
   'http://localhost',
+  
 ]
 
-export const AUTH_MODE: AuthMode = 'thirdpartypasswordless'
+// ? 
+export const AUTH_MODE: AuthMode = 'emailpassword'

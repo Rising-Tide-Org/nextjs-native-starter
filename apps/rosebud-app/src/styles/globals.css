@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  --ion-safe-area-top: env(safe-area-inset-top);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+  --ion-safe-area-left: env(safe-area-inset-left);
+  --ion-safe-area-right: env(safe-area-inset-right);
+}
+
+html,
+body,
+#__next,
+#__next > div {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  /* capacitor native app safe area */
+  padding-top: var(--ion-safe-area-top);; 
+  /* TODO: bottom padding isn't affecting fixed position tab bar */
+  padding-bottom: var(--ion-safe-area-bottom);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+*:focus,
+a:focus,
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.firebase-emulator-warning {
+  display: none;
+}

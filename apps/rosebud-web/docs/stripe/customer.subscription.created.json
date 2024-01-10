@@ -1,0 +1,67 @@
+/**
+ * delete entire file - dG
+ * paste the contents into it - ctrl + v
+ * save and exit - :wq
+ *
+ * This file contains 1 change:
+ * 1. Added customer fields: email, name, metadata
+ **/
+
+{
+  "_meta": {
+    "template_version": 0
+  },
+  "fixtures": [
+    {
+      "name": "customer",
+      "path": "/v1/customers",
+      "method": "post",
+      "params": {
+        "description": "(created by Stripe CLI)",
+        "payment_method": "pm_card_visa",
+        "invoice_settings": {
+          "default_payment_method": "pm_card_visa"
+        },
+        "email": "monte@justimagine.co",
+        "name": "Monte Thakkar",
+        "metadata": {
+          "uid": "UeYTQPvTarWJAsIKy78SURiAcqc2",
+          "uuid": "fc5d6ad0-1e38-40bd-9586-af3c8bbe9140"
+        }
+      }
+    },
+    {
+      "name": "product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Rosebud Premium",
+        "description": "(created by Stripe CLI)"
+      }
+    },
+    {
+      "name": "price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${product:id}",
+        "unit_amount": "499",
+        "currency": "usd",
+        "recurring[interval]": "month"
+      }
+    },
+    {
+      "name": "subscription",
+      "path": "/v1/subscriptions",
+      "method": "post",
+      "params": {
+        "customer": "${customer:id}",
+        "items": [
+          {
+            "price": "${price:id}"
+          }
+        ]
+      }
+    }
+  ]
+}

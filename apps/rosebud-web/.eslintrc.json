@@ -1,0 +1,199 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next",
+
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["prettier", "import", "unused-imports", "react", "react-hooks"],
+  "rules": {
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "semi": ["error", "never"]
+  },
+  "overrides": [
+    {
+      "rules": {
+        // COMMON rules below
+
+        "eqeqeq": ["error", "smart"],
+        // This rule is incredibly slow. We will run our own prettier checks via
+        // `prettier --check` instead
+        "prettier/prettier": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "varsIgnorePattern": "^_",
+            "args": "after-used",
+            "argsIgnorePattern": "^_"
+          }
+        ],
+
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "ts": "never",
+            "mjs": "never",
+            "jsx": "never",
+            "tsx": "never"
+          }
+        ],
+        "import/no-amd": "error",
+        "import/no-commonjs": "error",
+        "import/no-cycle": "error",
+        "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": [
+          "warn",
+          {
+            // allow devDependencies imports in test and stories files
+            "devDependencies": true,
+            // chakra ui is a pain so need to enable this one
+            "bundledDependencies": true
+          }
+        ],
+        "camelcase": [
+          "error",
+          {
+            "ignoreDestructuring": true,
+            "ignoreGlobals": true,
+            "ignoreImports": true,
+            "properties": "never"
+          }
+        ],
+        "quotes": [
+          "error",
+          "single",
+          {
+            "avoidEscape": true,
+            "allowTemplateLiterals": false
+          }
+        ], // Avoid conflict with prettier https://github.com/prettier/prettier/issues/973
+        "curly": "off",
+        "no-implicit-coercion": [
+          "error",
+          { "boolean": true, "number": true, "string": true }
+        ],
+        // For security reasons, only config files (public and private) are allowed to use process.env
+        // Sensitive env variables could end up in the next built otherwise
+        // Should turn it on eventually
+        "no-process-env": "off",
+        "no-empty-function": "off",
+        // The following rules are replaced by their @typescript-eslint equivalent.
+        "no-use-before-define": "off",
+        "no-shadow": "off",
+        "no-unused-expressions": "off",
+
+        // TYPESCRIPT SPECIFIC RULES BELOW
+
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-namespace": "off",
+        // Shouldn't interfere with unused-imports/no-unused-imports that can actually fix this
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/ban-ts-comment": [
+          "error",
+          { "ts-expect-error": false }
+        ],
+        // This bans {} which is very useful
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/consistent-type-assertions": [
+          "warn",
+          { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "@typescript-eslint/member-ordering": "off",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "format": ["PascalCase"],
+            "leadingUnderscore": "forbid",
+            "selector": "typeAlias",
+            "trailingUnderscore": "forbid"
+          },
+          // Allow any naming convention for properties as they are usually
+          // names we cannot control
+          {
+            "selector": "property",
+            "format": null
+          }
+        ],
+        "@typescript-eslint/no-var-requires": "off", // We still want to use require() without TS nagging us
+        "@typescript-eslint/no-dynamic-delete": "error", // Good idea overall, seeing that we like to use delete in a few places https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-dynamic-delete.md
+        "@typescript-eslint/no-unused-expressions": "error", // Good to have
+        "@typescript-eslint/unified-signatures": "error", // Good to have
+        "@typescript-eslint/no-base-to-string": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-extra-non-null-assertion": "error",
+        "@typescript-eslint/no-extraneous-class": "error",
+        "@typescript-eslint/no-floating-promises": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-implied-eval": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+        "@typescript-eslint/no-parameter-properties": "error",
+        "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/no-throw-literal": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-unnecessary-condition": "off", // Would be nice in the future but too dangerous while we are not fully using TypeScript
+        "@typescript-eslint/no-unnecessary-qualifier": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-unnecessary-type-arguments": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-unnecessary-type-assertion": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-unsafe-call": "off", // Would be nice in the future but too dangerous while we are not fully using TypeScript
+        "@typescript-eslint/no-unsafe-member-access": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-unsafe-return": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/no-use-before-define": "off", // The team was not able to agree on this rule, https://curiotools.slack.com/archives/C03S5RK9Z29/p1663628164009439
+        "@typescript-eslint/prefer-as-const": "error",
+        "@typescript-eslint/prefer-for-of": "off",
+        "@typescript-eslint/prefer-function-type": "off",
+        "@typescript-eslint/prefer-nullish-coalescing": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "@typescript-eslint/prefer-readonly": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/promise-function-async": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/require-array-sort-compare": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/restrict-plus-operands": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/restrict-template-expressions": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/strict-boolean-expressions": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/switch-exhaustiveness-check": "off", // Needs parserOptions.project fix
+        "@typescript-eslint/typedef": "off",
+
+        // REACT SPECIFIC RULES BELOW
+
+        // This is a a good overall rule for code cleanliness
+        "react/destructuring-assignment": "off",
+        "react/require-default-props": "off", // Sometimes we want to just keep padding <value> | undefined down the component chain
+        "react/sort-prop-types": [
+          "error",
+          {
+            "callbacksLast": true,
+            "ignoreCase": true,
+            "requiredFirst": true,
+            "sortShapeProp": true
+          }
+        ],
+        "react/static-property-placement": [
+          "off",
+          { "extensions": [".tsx", ".jsx"] }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/no-unescaped-entities": "off", // Its a bit cumbersome to escape for e.g `"` in <Text>Hide natural "None" traits</Text>
+        "react/display-name": "off", // Tts unnecessary in certain situation and is just a boilerplate
+        "react/jsx-filename-extension": [
+          // Good to have
+          "error",
+          {
+            "extensions": [".tsx", ".jsx"]
+          }
+        ],
+        "react/react-in-jsx-scope": "off",
+        "jsx-a11y/no-autofocus": "off", // This is a bit too restrictive for us right now
+        "react/prop-types": "off"
+      },
+      "files": ["*.ts", "*.tsx", "*.js"],
+      "excludedFiles": ["*.test.js", "*.test.ts"]
+    }
+  ]
+}

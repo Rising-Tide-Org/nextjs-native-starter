@@ -1,6 +1,6 @@
 {
-  "name": "turborepo-basic-yarn",
-  "version": "0.0.0",
+  "name": "@curio/swell",
+  "version": "0.72.2",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -8,7 +8,7 @@
     "test": "turbo run test",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install"
+    "prepare": "npx husky install"
   },
   "dependencies": {
     "app": "workspace:*",
