@@ -11,7 +11,7 @@ export const createCheckoutSession = (
   customerId: string,
   priceId: string,
   returnUrl?: string,
-  coupon?: string
+  coupon?: string,
 ) =>
   fetchNextApi<{ sessionId: string }>('/api/payment/new-checkout', {
     method: 'POST',
@@ -26,7 +26,7 @@ export const createCheckoutSession = (
 export const createPortalLink = (
   customerId: string,
   subscriptionId: string,
-  returnPath?: string
+  returnPath?: string,
 ) =>
   fetchNextApi<{ url: string }>('/api/payment/create-portal-link', {
     method: 'POST',
@@ -53,7 +53,7 @@ export const createNewCustomer = (
   uid: string,
   uuid: string,
   upgradeSource: SubscriptionSource,
-  utmParams: UtmParams
+  utmParams: UtmParams,
 ) =>
   fetchNextApi<string>('/api/payment/create-customer', {
     method: 'POST',
@@ -73,7 +73,7 @@ export const cancelSubscription = (
   email?: string,
   phone?: string,
   reason?: string,
-  moreDetails?: string
+  moreDetails?: string,
 ) =>
   fetchNextApi<Subscription>('/api/payment/cancel-subscription', {
     method: 'POST',

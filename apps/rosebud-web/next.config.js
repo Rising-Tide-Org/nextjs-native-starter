@@ -11,6 +11,19 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const withPWA = require('next-pwa')
 
+const getCorsHeadersForDev = () => {
+  const headers = {}
+
+  headers['Access-Control-Allow-Origin'] = '*'
+  headers['Access-Control-Allow-Methods'] = 'GET,OPTIONS,PATCH,DELETE,POST,PUT'
+  headers['Access-Control-Allow-Credentials'] = 'true'
+  headers['Access-Control-Allow-Headers'] =
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
+  headers['Access-Control-Expose-Headers'] = 'Cookie'
+
+  return Object.entries(headers).map(([key, value]) => ({ key, value }))
+}
+
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
   // https://infosec.mozilla.org/guidelines/web_security#examples-9
@@ -86,8 +99,15 @@ const nextConfig = {
           },
         ],
       },
+      // TODO: don't include this is env != development
+      // added for local dev
+      {
+        source: '/api/(.*)',
+        headers: getCorsHeadersForDev(),
+      },
     ]
   },
+  // TODO: will need to fix this for rosebud-app so it can still utilize Mixpanel without /mp rewrites
   async rewrites() {
     return [
       {

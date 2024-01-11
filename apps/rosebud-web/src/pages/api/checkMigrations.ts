@@ -13,6 +13,11 @@ import { firestore } from 'firebase-admin'
 const handler = async (req: NextAuthApiRequest, res: NextApiResponse) => {
   try {
     const userId = req._user?.id
+
+    console.log('==============================')
+    console.log('checkMigrations userId', userId)
+    console.log('==============================')
+
     if (!userId) {
       return res.status(404).json({ error: { message: 'User not found' } })
     }
@@ -23,12 +28,21 @@ const handler = async (req: NextAuthApiRequest, res: NextApiResponse) => {
     const userRef = snapshot.ref
     const user = snapshot.data
 
+    console.log('==============================')
+    console.log('checkMigrations user', user?.email)
+    console.log('==============================')
+
     if (!userRef || !user) {
       return res.status(404).json({ error: { message: 'User not found' } })
     }
 
     const latestMigrationNumber = kMigrations.length
     const userMigrationNumber = user.migrationNumber ?? 0
+
+    console.log('==============================')
+    console.log('user migration #', userMigrationNumber, latestMigrationNumber)
+    console.log('==============================')
+
     if (userMigrationNumber >= latestMigrationNumber) {
       return res.status(201).json({})
     }

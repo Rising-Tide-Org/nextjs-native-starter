@@ -14,6 +14,12 @@ const config: CapacitorConfig = {
     SplashScreen: {
       launchAutoHide: true, // Set this to false to maintain splash screen on screen and fetch data for example on startup
     },
+    FirebaseAuthentication: {
+      skipNativeAuth: false,
+    },
+    CapacitorCookies: {
+      enabled: true,
+    },
   },
 }
 

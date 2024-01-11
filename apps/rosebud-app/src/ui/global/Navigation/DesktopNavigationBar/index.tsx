@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import routes from 'lib/routes'
-import NavHamburgerMenu from '../NavHamburgerMenu'
+import NavHamburgerMenu from 'ui/global/Navigation/NavHamburgerMenu'
 import { useUserProvider } from 'providers/UserProvider'
 import GlobalTabNavigation from '../GlobalTabNavigation'
 import { useRouter } from 'next/router'
@@ -37,7 +37,7 @@ const DesktopNav = ({ hideMenu, showHelp }: Props) => {
 
   return (
     <DesktopNavContainer>
-      <Flex align='center' px={1} gap={2} flexShrink={0}>
+      <Flex align="center" px={1} gap={2} flexShrink={0}>
         <Link as={NextLink} href={routes.default} passHref>
           {/* TODO need to adjust logo */}
           <Image
@@ -46,12 +46,12 @@ const DesktopNav = ({ hideMenu, showHelp }: Props) => {
             src={
               colorMode === 'dark' ? '/logo-type-light.svg' : '/logo-type.svg'
             }
-            alt='Rosebud logo'
+            alt="Rosebud logo"
           />
         </Link>
         <Text
           color={subscriptionTier === 'bloom' ? 'bloom.600' : 'brand.400'}
-          textTransform='lowercase'
+          textTransform="lowercase"
         >
           {subscriptionTierName ?? 'beta'}
         </Text>
@@ -59,10 +59,10 @@ const DesktopNav = ({ hideMenu, showHelp }: Props) => {
       {!hideMenu && user ? (
         <>
           <GlobalTabNavigation />
-          <Flex align='center' gap={1}>
+          <Flex align="center" gap={1}>
             {showReviewCTA ? (
               <Box
-                position='relative'
+                position="relative"
                 pr={1}
                 display={{ base: 'none', md: 'block' }}
               >
@@ -74,10 +74,10 @@ const DesktopNav = ({ hideMenu, showHelp }: Props) => {
                 >
                   <Button
                     backgroundColor={reviewButtonBgColor}
-                    backgroundSize='cover'
-                    size='sm'
-                    position='relative'
-                    overflow='hidden'
+                    backgroundSize="cover"
+                    size="sm"
+                    position="relative"
+                    overflow="hidden"
                     _active={{
                       backgroundColor: { reviewButtonBgColor },
                     }}
@@ -105,7 +105,7 @@ const DesktopNav = ({ hideMenu, showHelp }: Props) => {
               </Box>
             ) : null}
             <Box
-              position='relative'
+              position="relative"
               pr={2}
               display={{ base: 'none', md: 'block' }}
             >
@@ -116,9 +116,9 @@ const DesktopNav = ({ hideMenu, showHelp }: Props) => {
                 shallow
               >
                 <Button
-                  variant='primary'
-                  size='sm'
-                  leftIcon={<RbPencil boxSize='14px' />}
+                  variant="primary"
+                  size="sm"
+                  leftIcon={<RbPencil boxSize="14px" />}
                 >
                   Write
                 </Button>

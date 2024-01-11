@@ -29,6 +29,10 @@ const tokenVerification: Middleware = async (
 ) => {
   const token = req.cookies['token']
 
+  console.log('==============================')
+  console.log('api req w token?', token)
+  console.log('==============================')
+
   const userId = (await getUserFromToken(token))?.uid
 
   if (!userId) {

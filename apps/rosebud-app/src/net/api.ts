@@ -5,7 +5,6 @@ import fetchBuilder from 'fetch-retry'
 import { kPublicUrl } from 'util/env'
 import { detectRefusalText } from 'util/openai'
 import { ApiError } from 'next/dist/server/api-utils'
-import { Capacitor } from '@capacitor/core'
 
 const fetch = fetchBuilder(isoFetch)
 
@@ -27,9 +26,13 @@ function getNextApiUrl(path: string, req?: IncomingMessage) {
     // If the request object doesn't exist, use the `kPublicUrl` directly.
     return `${kPublicUrl}${path}`
   }
-  
+
   // this is running client-side, so a relative path is fine as long as this is the web not native app
-  return Capacitor.isNativePlatform() ? `http://localhost:3000${path}` : path
+  // return Capacitor.isNativePlatform() ? `http://localhost:3000${path}` : path
+
+  // TEMP
+  return `http://192.168.0.146:3000${path}`
+  // TEMP
 }
 
 /**
@@ -42,7 +45,18 @@ export async function fetchNextApi<T>(
   options: RequestInit = {},
   req?: IncomingMessage,
 ): Promise<ApiResponse<T>> {
+  console.log('==============================')
+  console.log('fetchNextApi', path, options)
+  console.log('==============================')
+
   const url = getNextApiUrl(path, req)
+
+  console.log('==============================')
+  console.log('cookies!', document.cookie)
+  console.log('==============================')
+
+  options.credentials = 'include'
+
   const resp = await fetch(url, {
     ...options,
     retries: kMaxRetries,
@@ -52,17 +66,31 @@ export async function fetchNextApi<T>(
       error: Error | null,
       response: Response | null,
     ) => {
+      console.log('==============================')
+      console.log('retryon')
+      console.log('==============================')
+
       // Conditional for retrying for every request, the most impactful one here is !response.ok
       if (
         (Boolean(error) || !response || !response.ok) &&
         attempt < kMaxRetries
       ) {
-        console.error(`Retrying, attempt number ${attempt + 1}`)
+        console.error(
+          `Retrying, attempt number ${
+            attempt + 1
+          } (${url}) error: ${error}, resp: ${response}`,
+        )
         return true
       }
       return false
     },
   })
+
+  console.log('==============================')
+  console.log('actual resp', resp)
+  console.log(path)
+  console.log('==============================')
+
   return resp.json()
 }
 
@@ -99,19 +127,24 @@ export function fetchNextStream(params: StreamRequestType): StreamReturnType {
   const signal = controller.signal
   let timeoutId: NodeJS.Timeout
 
+  const url = getNextApiUrl(path)
+
   let buffer = ''
   let caughtRefusal = false
 
   const start = (retryCount = 0, counterRefusal = false): Promise<void> => {
+    options.credentials = 'include'
+
     if (counterRefusal) {
       options.headers = {
         ...options.headers,
         'counter-refusal': 'true',
       }
     }
+
     return new Promise<void>((resolve, reject) => {
       Promise.race([
-        fetch(path, {
+        fetch(url, {
           ...options,
           signal,
         }),
@@ -133,6 +166,10 @@ export function fetchNextStream(params: StreamRequestType): StreamReturnType {
           clearTimeout(timeoutId)
 
           const response = raceResult as Response
+
+          console.log('==============================')
+          console.log('stream resp', response)
+          console.log('==============================')
 
           if (!response.ok) {
             throw new ApiError(
@@ -186,7 +223,10 @@ export function fetchNextStream(params: StreamRequestType): StreamReturnType {
     }).catch(async error => {
       const { statusCode } = error as ApiError
       if (retryCount < kMaxRetries && statusCode !== 429) {
-        console.warn(`Stream failed, retrying... (${retryCount + 1})`, error)
+        console.warn(
+          `Stream failed, retrying... (${retryCount + 1}) (${url})`,
+          error,
+        )
         await new Promise(resolve => setTimeout(resolve, kRetryDelay))
         return start(retryCount + 1, error.message === 'Refusal detected')
       } else {

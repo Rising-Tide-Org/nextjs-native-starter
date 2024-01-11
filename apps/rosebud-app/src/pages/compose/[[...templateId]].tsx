@@ -10,7 +10,7 @@ import { getQueryParam } from 'util/url'
 const EntryPage = () => {
   const router = useRouter()
 
-  const templateId = getQueryParam(router.query, 'templateId')
+  const templateId = getQueryParam(router.query, 'templateId') ?? undefined
 
   const draftId = getQueryParam(router.query, 'draft')
   let draft: Entry | undefined = undefined
@@ -29,8 +29,6 @@ const EntryPage = () => {
       fetchDraft(draftId)
     }
   }, [draftId])
-
-  if (!templateId) return null
 
   return (
     <Compose

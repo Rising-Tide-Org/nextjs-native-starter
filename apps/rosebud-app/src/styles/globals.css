@@ -23,8 +23,11 @@ body,
 
 body {
   margin: 0;
+
+  /* TODO: don't apply any safe area padding to Welcome Screen */
+  /* TODO: DO need to apply safe area to full-height modals */
   /* capacitor native app safe area */
-  padding-top: var(--ion-safe-area-top);; 
+  padding-top: var(--ion-safe-area-top);
   /* TODO: bottom padding isn't affecting fixed position tab bar */
   padding-bottom: var(--ion-safe-area-bottom);
 }

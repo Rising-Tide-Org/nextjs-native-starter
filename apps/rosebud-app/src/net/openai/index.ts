@@ -34,7 +34,7 @@ export const generateTopicPrompts = (topic: string) =>
  */
 export const generatePromptsStream = (
   entries: Entry[],
-  onData: (data: string) => void
+  onData: (data: string) => void,
 ) =>
   fetchNextStream({
     path: '/api/stream/generatePrompts',
@@ -64,7 +64,7 @@ export const digDeeperStream = (
     localDate: string
   },
   onData: (data: string) => void,
-  onComplete?: (data: string) => void
+  onComplete?: (data: string) => void,
 ) =>
   fetchNextStream({
     path: '/api/stream/digDeeper',
@@ -85,7 +85,7 @@ export const digDeeperStream = (
 export const suggestCommitmentsStream = (
   entries: Entry[],
   onData: (data: string) => void,
-  onComplete?: () => void
+  onComplete?: () => void,
 ): StreamReturnType =>
   fetchNextStream({
     path: '/api/stream/suggestCommitments',
@@ -118,7 +118,7 @@ export const weeklyReportStream = (
   entries: Entry[],
   compressedEntries: string,
   onData: (data: string) => void,
-  onComplete?: (data: string) => void
+  onComplete?: (data: string) => void,
 ): StreamReturnType =>
   fetchNextStream({
     path: '/api/stream/weeklyReport',
@@ -156,7 +156,7 @@ export const passThru = (messages: ChatCompletionMessageParam[]) =>
 
 export const passThruStream = (
   messages: ChatCompletionMessageParam[],
-  onData: (data: string) => void
+  onData: (data: string) => void,
 ) =>
   fetchNextStream({
     path: '/api/stream/passThru',
@@ -180,7 +180,7 @@ export const entryReflection = (
     templateId: string
   },
   onData: (data: string) => void,
-  onComplete?: () => void
+  onComplete?: () => void,
 ) =>
   fetchNextStream({
     path: '/api/stream/entryReflection',
@@ -203,7 +203,7 @@ export const generateContent = (
   entries: Entry[],
   type: CollectionItemType,
   onData: (data: string) => void,
-  onComplete?: () => void
+  onComplete?: () => void,
 ): StreamReturnType =>
   fetchNextStream({
     path: '/api/stream/generateContent',
@@ -236,7 +236,7 @@ export const transcribeAudio = (file: string, language: string) =>
 
 export const summarizeTopic = <T>(
   topic: string,
-  type: 'description' | 'milestones' | 'ask'
+  type: 'description' | 'milestones' | 'ask',
 ) =>
   fetchNextApi<T>('/api/journal/summarizeTopic/http', {
     method: 'POST',
@@ -247,7 +247,7 @@ export const summarizeTopicStream = (
   topic: string,
   type: 'description' | 'milestones',
   onData: (data: string) => void,
-  onComplete?: (data: string) => void
+  onComplete?: (data: string) => void,
 ): StreamReturnType =>
   fetchNextStream({
     path: '/api/journal/summarizeTopic/stream',

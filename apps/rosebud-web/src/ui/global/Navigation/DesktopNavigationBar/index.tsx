@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import routes from 'lib/routes'
-import NavHamburgerMenu from '../NavHamburgerMenu'
+import NavHamburgerMenu from 'ui/global/Navigation/NavHamburgerMenu'
 import { useUserProvider } from 'providers/UserProvider'
 import GlobalTabNavigation from '../GlobalTabNavigation'
 import { useRouter } from 'next/router'

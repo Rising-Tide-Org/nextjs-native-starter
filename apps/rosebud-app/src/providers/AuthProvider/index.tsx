@@ -10,6 +10,10 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from 'firebase/auth'
+
+// TODO: use this rather than firebase/auth
+// import { FirebaseAuthentication } from '@capacitor-firebase/authentication'
+
 import {
   createContext,
   ReactNode,
@@ -55,6 +59,8 @@ import PageLoadingReset from 'ui/global/PageLoading/PageLoadingReset'
 import { FirebaseError } from 'firebase/app'
 import { appendQueryParam } from 'util/url'
 import { LifemapProvider } from 'providers/LifemapProvider'
+import { Capacitor, CapacitorCookies } from '@capacitor/core'
+// import { Capacitor } from '@capacitor/core'
 
 type AuthProviderContextType = {
   user: AuthUser | null | undefined
@@ -65,7 +71,7 @@ type AuthProviderContextType = {
   signUp: (
     email: string,
     password: string,
-    name?: string
+    name?: string,
   ) => Promise<AuthUser | undefined>
 }
 
@@ -74,7 +80,7 @@ const defaultAuthContext = {
 }
 
 export const AuthProviderContext = createContext<AuthProviderContextType>(
-  defaultAuthContext as AuthProviderContextType
+  defaultAuthContext as AuthProviderContextType,
 )
 
 /**
@@ -116,8 +122,12 @@ export function AuthProvider({ children }: Props) {
    * Setting auth user
    */
   useEffect(() => {
+    // FirebaseAuthentication.addListener('authStateChange', ({ user }) => {
+    //   setUser(user)
+    // })
+
     // Listen for changes to auth user
-    const authUnsub = firebaseAuth.onAuthStateChanged(async (user) => {
+    const authUnsub = firebaseAuth.onAuthStateChanged(async user => {
       setUser(user)
 
       // if viewing a protected page when auth state changes to logged-out,
@@ -143,13 +153,31 @@ export function AuthProvider({ children }: Props) {
 
     // write updates to the short-lived ID token to a cookie so it can
     // be used by API routes.
-    const authIdUnsub = firebaseAuth.onIdTokenChanged(async (user) => {
+    const authIdUnsub = firebaseAuth.onIdTokenChanged(async user => {
       if (user) {
         const token = await user.getIdToken()
+
+        // TODO: wrap these with a platform agnostic setCookie()
+        if (Capacitor.isNativePlatform()) {
+          await CapacitorCookies.setCookie({
+            key: 'token',
+            url: 'http://192.168.0.146:3000',
+            value: token,
+          })
+        }
+
         nookies.set(undefined, 'token', token, { path: '/' })
       } else {
+        // TODO: wrap these with a platform agnostic deleteCookie()
         nookies.destroy(undefined, 'token', { path: '/' })
         nookies.destroy(undefined, 'uuid', { path: '/' })
+
+        if (Capacitor.isNativePlatform()) {
+          CapacitorCookies.deleteCookie({
+            key: 'token',
+            url: 'http://192.168.0.146:3000',
+          })
+        }
       }
     })
 
@@ -167,6 +195,9 @@ export function AuthProvider({ children }: Props) {
 
       try {
         token = await user.getIdToken()
+        // const nativeToken = await FirebaseAuthentication.getIdToken()
+        // token = nativeToken.token
+
         nookies.set(undefined, 'token', token, { path: '/' })
       } catch (error) {
         console.error('[Error refreshing token] \n', error)
@@ -202,7 +233,7 @@ export function AuthProvider({ children }: Props) {
       // Record referralCode to a user profile if exists
       triggerReferralStage(ReferralConversionStage.initial)
     },
-    [triggerReferralStage]
+    [triggerReferralStage],
   )
 
   /**
@@ -239,10 +270,10 @@ export function AuthProvider({ children }: Props) {
     Analytics.trackEvent('auth.signOut')
 
     // Clear local storage
-    const keys = Object.keys(window.localStorage).filter((k) =>
-      k.startsWith(kLSAppPrefix)
+    const keys = Object.keys(window.localStorage).filter(k =>
+      k.startsWith(kLSAppPrefix),
     )
-    keys.forEach((k) => {
+    keys.forEach(k => {
       window.localStorage.removeItem(k)
     })
 
@@ -273,7 +304,7 @@ export function AuthProvider({ children }: Props) {
             const signInResult = await signInWithEmailAndPassword(
               firebaseAuth,
               email,
-              password
+              password,
             )
             newUser = signInResult.user
           } else {
@@ -284,7 +315,7 @@ export function AuthProvider({ children }: Props) {
           const userCredential = await createUserWithEmailAndPassword(
             firebaseAuth,
             email,
-            password
+            password,
           )
           newUser = userCredential.user
           await createFirestoreUser(newUser)
@@ -314,7 +345,7 @@ export function AuthProvider({ children }: Props) {
         throw parseFirebaseError(error)
       }
     },
-    [createFirestoreUser, user]
+    [createFirestoreUser, user],
   )
 
   /**
@@ -325,7 +356,7 @@ export function AuthProvider({ children }: Props) {
       const userCredential = await signInWithEmailAndPassword(
         firebaseAuth,
         email,
-        password
+        password,
       )
       return userCredential.user
     } catch (error) {
@@ -352,7 +383,7 @@ export function AuthProvider({ children }: Props) {
       handleSignOut,
       handleSignInAnonymously,
       handleRefreshToken,
-    ]
+    ],
   )
 
   // attempting to access a protected page while the auth state is loading or no auth is present.
@@ -361,7 +392,7 @@ export function AuthProvider({ children }: Props) {
     return (
       <PageLoadingReset
         showReset={showReset}
-        source='AuthProvider'
+        source="AuthProvider"
         signOut={handleSignOut}
       />
     )
@@ -426,7 +457,7 @@ const createUserDoc = async (authUser: AuthUser) => {
           ]),
           pricing: PriceDiscoveryVariant.withDiscount,
           pricingInterval: getRandomElement(
-            Object.values(PriceIntervalVariant)
+            Object.values(PriceIntervalVariant),
           ),
         },
         metadata: {
@@ -448,7 +479,7 @@ const createUserDoc = async (authUser: AuthUser) => {
         },
         createdAt: serverTimestamp(),
       },
-      authUser.uid
+      authUser.uid,
     )
     return createdRecord
   } catch (e) {
