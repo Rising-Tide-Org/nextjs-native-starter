@@ -1,3 +1,7 @@
+## Note!
+Locally, add/set env vars `NEXT_PUBLIC_VERCEL_ENV=development` and `NEXT_PUBLIC_LOCAL_IP=http://192.168.0.146:3000` (your local network IP, obvs)
+
+
 <p align="left">
   <img src="https://github.com/RobSchilderr/nextjs-native-starter/assets/35261620/18602926-d323-43d6-b713-b154caaeeeca" width="500">
 </p>

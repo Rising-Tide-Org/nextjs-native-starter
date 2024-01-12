@@ -23,7 +23,9 @@ const config: CapacitorConfig = {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  // enable live reload when dev'in on connected device
+  // enables live reload when dev'ing on connected device  
+  // comment this out if you want to test the built bundle
+  // via `pnpm build` in rosebud-app
   config.server = {
     url: 'http://192.168.0.146:3000',
   }
