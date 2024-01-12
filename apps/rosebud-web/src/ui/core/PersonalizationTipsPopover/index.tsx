@@ -11,7 +11,7 @@ import {
   Portal,
   PopoverHeader,
 } from '@chakra-ui/react'
-import useIsMobile from 'hooks/useIsMobile'
+import useIsMobile from 'shared/hooks/useIsMobile'
 import { useCallback, useState } from 'react'
 import { IoInformationCircle } from 'react-icons/io5'
 import SmallCapsHeading from '../SmallCapsHeading'

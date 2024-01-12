@@ -7,10 +7,10 @@ import {
   Spinner,
   VStack,
 } from '@chakra-ui/react'
-import useFetchOne from 'hooks/useFetchOne'
+import useFetchOne from 'shared/hooks/useFetchOne'
 import { CollectionItemTopic } from 'types/Collection'
 import { useCallback } from 'react'
-import { kViewPadding } from 'ui/constants'
+import { kViewPadding } from 'shared/ui/constants'
 import { FiChevronLeft } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import TopicSummary from '../TopicSummary'

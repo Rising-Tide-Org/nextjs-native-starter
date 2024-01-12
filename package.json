@@ -15,7 +15,7 @@
     "config": "workspace:*",
     "lib": "workspace:*",
     "tsconfig": "workspace:*",
-    "ui": "workspace:*"
+    "shared": "workspace:*"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

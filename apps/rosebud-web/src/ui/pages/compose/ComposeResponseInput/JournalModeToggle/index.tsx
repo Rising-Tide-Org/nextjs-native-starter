@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { useComposeProvider } from 'providers/ComposeProvider'
 import { useMemo } from 'react'
 import { BiChevronRight } from 'react-icons/bi'
-import MotionBox from 'ui/core/MotionBox'
+import MotionBox from 'shared/ui/core/MotionBox'
 import { useComposeCoordinator } from '../../ComposeCoordinator'
 import ComposeSettingsModal from '../../ComposeSettingsModal'
 

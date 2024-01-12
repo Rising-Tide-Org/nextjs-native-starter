@@ -28,7 +28,6 @@
     "downloadjs": "1.4.7",
     "eventsource-parser": "1.0.0",
     "fetch-retry": "5.0.4",
-    "framer-motion": "10.2.5",
     "get-user-locale": "2.3.0",
     "gpt-tokenizer": "^2.1.2",
     "html2canvas": "^1.4.1",

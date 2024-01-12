@@ -30,7 +30,7 @@ import {
 } from 'util/device'
 import { HiCheckCircle } from 'react-icons/hi2'
 import { useModalProvider } from 'providers/ModalProvider'
-import useNotificationManager from 'hooks/useNotificationManager'
+import useNotificationManager from 'shared/hooks/useNotificationManager'
 import {
   minimumIOSMajorVersion,
   minimumIOSMinorVersion,

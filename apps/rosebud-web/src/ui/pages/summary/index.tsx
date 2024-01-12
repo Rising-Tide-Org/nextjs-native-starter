@@ -1,4 +1,4 @@
-import useFetchOne from 'hooks/useFetchOne'
+import useFetchOne from 'shared/hooks/useFetchOne'
 import routes from 'lib/routes'
 import { NavigationProvider } from 'providers/NavigationProvider'
 import { SummaryProvider } from 'providers/SummaryProvider'

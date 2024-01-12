@@ -42,7 +42,7 @@ import { User, UserFlag } from 'types/User'
 import { getNearestUTCHourFromLocal, getTimezone } from 'util/date'
 import { kDefaultReminderTime } from 'constants/defaults'
 import { captureException as sentryCaptureException } from '@sentry/nextjs'
-import { useReferralConversion } from 'hooks/useReferralConversion'
+import { useReferralConversion } from 'shared/hooks/useReferralConversion'
 import { ReferralConversionStage } from 'constants/referral'
 import { kVersionsWithReleaseNotes } from 'constants/releaseNotes'
 import { getNearestLanguage } from 'l10n/languages'
@@ -161,8 +161,9 @@ export function AuthProvider({ children }: Props) {
         if (Capacitor.isNativePlatform()) {
           await CapacitorCookies.setCookie({
             key: 'token',
-            url: 'http://192.168.0.146:3000',
+            url: process.env.NEXT_PUBLIC_VERCEL_URL,
             value: token,
+            path: '/'
           })
         }
 
@@ -175,7 +176,7 @@ export function AuthProvider({ children }: Props) {
         if (Capacitor.isNativePlatform()) {
           CapacitorCookies.deleteCookie({
             key: 'token',
-            url: 'http://192.168.0.146:3000',
+            url: process.env.NEXT_PUBLIC_VERCEL_URL,
           })
         }
       }

@@ -2,7 +2,7 @@ import { leadingDigitRegex } from 'constants/regex'
 import { useComposeProvider } from 'providers/ComposeProvider'
 import { useCallback } from 'react'
 import { ComposeSuggestion } from 'types/Compose'
-import { kOptionSlideInTransition } from 'ui/constants'
+import { kOptionSlideInTransition } from 'shared/ui/constants'
 import PromptLabel from 'ui/pages/compose/PromptLabel'
 
 type Props = {

@@ -5,8 +5,8 @@ import {
   intervalToLabelMap,
 } from 'types/Collection'
 import { UserFlag } from 'types/User'
-import { kViewPadding } from 'ui/constants'
-import MotionBox from 'ui/core/MotionBox'
+import { kViewPadding } from 'shared/ui/constants'
+import MotionBox from 'shared/ui/core/MotionBox'
 import CoachMark from 'ui/shared/CoachMark'
 import { RbCheckmark } from 'ui/shared/Icon'
 import ThumbVote from 'ui/shared/ThumbVote'

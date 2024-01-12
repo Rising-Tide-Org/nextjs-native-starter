@@ -4,6 +4,7 @@ import { fetchOne } from 'db-server/fetch'
 import { User } from 'types/User'
 import { initializeAdmin } from 'db-server'
 import { getUserFromToken } from './shared'
+import { ALLOWED_CORS_URLS } from 'lib/utils/config'
 
 /**
  * This is a custom type that extends NextApiResponse to include a _user property
@@ -31,6 +32,8 @@ const tokenVerification: Middleware = async (
 
   console.log('==============================')
   console.log('api req w token?', token)
+  console.log('req origin', req.headers.origin)
+  console.log('allowed origins', ALLOWED_CORS_URLS)
   console.log('==============================')
 
   const userId = (await getUserFromToken(token))?.uid

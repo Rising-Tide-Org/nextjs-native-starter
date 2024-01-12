@@ -1,6 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react'
 import { query, where } from 'firebase/firestore'
-import useFetchMany from 'hooks/useFetchMany'
+import useFetchMany from 'shared/hooks/useFetchMany'
 import { ListView } from 'ui/core/ListView'
 import { ListViewItem } from 'ui/core/ListView/ListViewItem'
 import { CollectionItemGoal } from 'types/Collection'

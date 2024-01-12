@@ -9,7 +9,7 @@ import {
   IconButton,
   useColorModeValue,
 } from '@chakra-ui/react'
-import useShareContent from 'hooks/useShareContent'
+import useShareContent from 'shared/hooks/useShareContent'
 import Analytics from 'lib/analytics'
 import { useSummaryProvider } from 'providers/SummaryProvider'
 import { useCallback, useEffect } from 'react'

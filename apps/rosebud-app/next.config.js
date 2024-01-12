@@ -15,7 +15,7 @@ const withPWA = require('next-pwa')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  transpilePackages: ['ui, lib'],
+  transpilePackages: ['shared', 'lib'],
   images: {
     unoptimized: true,
   },

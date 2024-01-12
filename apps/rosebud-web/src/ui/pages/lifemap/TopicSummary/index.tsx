@@ -7,7 +7,7 @@ import {
   IconButton,
   Skeleton,
 } from '@chakra-ui/react'
-import useFetchOne from 'hooks/useFetchOne'
+import useFetchOne from 'shared/hooks/useFetchOne'
 import { CollectionItemTopic } from 'types/Collection'
 import ResizeTextarea from 'react-textarea-autosize'
 import { updateRecord } from 'db/mutate'

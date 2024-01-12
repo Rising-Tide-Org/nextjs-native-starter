@@ -24,8 +24,9 @@ import {
   kiOSBottomPadding,
   kTabBarHeightMobile,
   kViewPadding,
-} from 'ui/constants'
+} from 'shared/ui/constants'
 import { isIOS, isPWAInstalled } from 'util/device'
+import { Capacitor } from '@capacitor/core'
 
 type Tab = {
   path: (path?: string) => string
@@ -82,7 +83,7 @@ const GlobalTabNavigation = () => {
   return (
     <Box
       position={{ base: 'fixed', md: 'relative' }}
-      bottom={0}
+      bottom={Capacitor.isNativePlatform() ? 'var(--ion-safe-area-bottom)' : 0}
       left={0}
       w='full'
       background='bg'

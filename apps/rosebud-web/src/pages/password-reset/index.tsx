@@ -10,7 +10,7 @@ import { sendPasswordResetEmail } from 'firebase/auth'
 import { parseFirebaseError } from 'util/firebase'
 import TopBar from 'ui/global/TopBar'
 import NextLink from 'next/link'
-import { kViewPadding } from 'ui/constants'
+import { kViewPadding } from 'shared/ui/constants'
 import NavigationBarSignedOut from 'ui/global/Navigation/NavigationBar/NavigationBarSignedOut'
 import Panel from 'ui/core/Panel'
 

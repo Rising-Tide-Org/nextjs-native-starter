@@ -9,12 +9,12 @@ import {
   Link,
   Text,
 } from '@chakra-ui/react'
-import useIsMobile from 'hooks/useIsMobile'
-import useShareContent from 'hooks/useShareContent'
+import useIsMobile from 'shared/hooks/useIsMobile'
+import useShareContent from 'shared/hooks/useShareContent'
 import Analytics from 'lib/analytics'
 import routes from 'lib/routes'
 import moment from 'moment'
-import { useNavigationProvider } from 'providers/NavigationProvider'
+import { useNavigationProvider } from 'shared/providers/NavigationProvider'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { Entry } from 'types/Entry'
 import EmptyPageState from 'ui/core/EmptyPageState'

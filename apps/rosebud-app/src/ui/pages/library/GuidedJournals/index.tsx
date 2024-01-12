@@ -7,7 +7,7 @@ import { kJournals } from 'constants/templates'
 import { rankTemplates } from 'util/template'
 import JournalCard from './JournalCard'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import { kGlobalLayoutMinWidth, kGlobalLayoutWidthNarrow } from 'ui/constants'
+import { kGlobalLayoutMinWidth, kGlobalLayoutWidthNarrow } from 'shared/ui/constants'
 import SmallCapsHeading from 'ui/core/SmallCapsHeading'
 import RequestJournalCTA from '../RequestJournalCTA'
 

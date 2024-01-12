@@ -1,7 +1,7 @@
 import { Badge, Flex, useColorModeValue } from '@chakra-ui/react'
 import { ComponentProps } from 'react'
 import { FiChevronRight } from 'react-icons/fi'
-import MotionBox from 'ui/core/MotionBox'
+import MotionBox from 'shared/ui/core/MotionBox'
 
 type Props = ComponentProps<typeof MotionBox> & {
   style?: 'chevron' | 'check'

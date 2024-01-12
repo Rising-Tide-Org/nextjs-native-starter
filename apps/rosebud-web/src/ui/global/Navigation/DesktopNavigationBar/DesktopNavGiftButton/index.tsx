@@ -1,7 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react'
 import { useModalProvider } from 'providers/ModalProvider'
 import { IoGiftOutline } from 'react-icons/io5'
-import { kMobileIconSize } from 'ui/constants'
+import { kMobileIconSize } from 'shared/ui/constants'
 
 const DesktopNavGiftButton = () => {
   const openModal = useModalProvider()

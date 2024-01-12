@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useMemo,
 } from 'react'
-import useFetchMany from 'hooks/useFetchMany'
+import useFetchMany from 'shared/hooks/useFetchMany'
 import { query, serverTimestamp, where } from 'firebase/firestore'
 import { AskItem } from 'types/Ask'
 import { createRecord, createRecordBatch, updateRecord } from 'db/mutate'

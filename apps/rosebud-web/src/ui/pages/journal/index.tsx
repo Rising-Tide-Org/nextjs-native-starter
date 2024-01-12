@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/react'
 import { orderBy, query, where } from 'firebase/firestore'
-import useFetchMany from 'hooks/useFetchMany'
+import useFetchMany from 'shared/hooks/useFetchMany'
 import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
 import { Entry } from 'types/Entry'
@@ -23,7 +23,7 @@ import getUserLocale from 'get-user-locale'
 import Analytics from 'lib/analytics'
 import debounce from 'lodash/debounce'
 import JournalListViewDraftItem from './JournalListViewDraftItem'
-import useIsMobile from 'hooks/useIsMobile'
+import useIsMobile from 'shared/hooks/useIsMobile'
 
 type Props = {
   query?: string

@@ -1,7 +1,7 @@
 import { fetchOne } from 'db/fetch'
 import { createRecord, deleteRecord, updateRecord } from 'db/mutate'
 import { limit, query, where } from 'firebase/firestore'
-import useFetchMany from 'hooks/useFetchMany'
+import useFetchMany from 'shared/hooks/useFetchMany'
 import Analytics from 'lib/analytics'
 import {
   createContext,

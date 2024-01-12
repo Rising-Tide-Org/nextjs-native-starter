@@ -13,7 +13,7 @@ import {
 } from 'react'
 import { ComposeRecordingState } from 'types/Compose'
 
-import { kTopBarHeight } from 'ui/constants'
+import { kTopBarHeight } from 'shared/ui/constants'
 import { isMobileDevice } from 'util/device'
 
 /**

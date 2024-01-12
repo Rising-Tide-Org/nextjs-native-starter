@@ -1,7 +1,7 @@
 import { fetchOne } from 'db/fetch'
 import { createRecord, updateRecord } from 'db/mutate'
 import { arrayUnion } from 'firebase/firestore'
-import useFetchOne from 'hooks/useFetchOne'
+import useFetchOne from 'shared/hooks/useFetchOne'
 import moment from 'moment'
 import React, {
   createContext,

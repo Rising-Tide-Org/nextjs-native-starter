@@ -8,7 +8,7 @@ import {
   query,
   where,
 } from 'firebase/firestore'
-import useFetchMany from 'hooks/useFetchMany'
+import useFetchMany from 'shared/hooks/useFetchMany'
 import { Template } from 'lib/template'
 import moment from 'moment'
 import React, {

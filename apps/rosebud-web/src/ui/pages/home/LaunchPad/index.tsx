@@ -18,8 +18,8 @@ import SmallCapsHeading from 'ui/core/SmallCapsHeading'
 import PromptCard from './PromptCard'
 import MoreCard from './MoreCard'
 import LoadingCard from './LoadingCard'
-import useIsMobile from 'hooks/useIsMobile'
-import usePageVisibility from 'hooks/usePageVisibility'
+import useIsMobile from 'shared/hooks/useIsMobile'
+import usePageVisibility from 'shared/hooks/usePageVisibility'
 import JournalCard from 'ui/pages/library/GuidedJournals/JournalCard'
 
 const kArrowButtonProps = {

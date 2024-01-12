@@ -2,7 +2,7 @@ import { Box, BoxProps, Tag, useColorModeValue } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import { FiX } from 'react-icons/fi'
-import MotionBox from 'ui/core/MotionBox'
+import MotionBox from 'shared/ui/core/MotionBox'
 
 type Props = BoxProps & {
   itemId: string

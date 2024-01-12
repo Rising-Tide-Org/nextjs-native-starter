@@ -19,7 +19,7 @@ import EmptyPageState from 'ui/core/EmptyPageState'
 import MakeToast from 'ui/core/MakeToast'
 import LocalTimeSelector from 'ui/shared/LocalTimeSelector'
 import { kDefaultReminderTime } from 'constants/defaults'
-import useNotificationManager from 'hooks/useNotificationManager'
+import useNotificationManager from 'shared/hooks/useNotificationManager'
 import Analytics from 'lib/analytics'
 
 type Props = Pick<ModalProps, 'isOpen' | 'onClose'>

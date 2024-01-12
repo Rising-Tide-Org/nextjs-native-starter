@@ -17,7 +17,7 @@ import { memo, useCallback, useEffect, useState } from 'react'
 import { useAuthProvider } from 'providers/AuthProvider'
 import NextLink from 'next/link'
 import MakeToast from 'ui/core/MakeToast'
-import useSetReferralCode from 'hooks/useSetReferralCode'
+import useSetReferralCode from 'shared/hooks/useSetReferralCode'
 import ComposeContainer from 'ui/pages/compose/ComposeContainer'
 
 type Props = {

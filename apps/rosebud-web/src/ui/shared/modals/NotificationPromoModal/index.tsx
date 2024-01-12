@@ -19,7 +19,7 @@ import { getNearestUTCHourFromLocal, hourAsLocalTimeString } from 'util/date'
 import MakeToast from 'ui/core/MakeToast'
 import onboardingTemplate from 'templates/onboarding-v5'
 import TopBar from 'ui/global/TopBar'
-import useNotificationManager from 'hooks/useNotificationManager'
+import useNotificationManager from 'shared/hooks/useNotificationManager'
 import { stripEmojis } from 'util/string'
 
 enum EntryStage {

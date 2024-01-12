@@ -12,7 +12,7 @@ export const isPreview = () => process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview'
 
 export const isProd = () =>
   [process.env.NEXT_PUBLIC_VERCEL_ENV, process.env.APP_ENV].includes(
-    'production'
+    'production',
   )
 
 export const kPublicUrl = isDev()
@@ -21,7 +21,8 @@ export const kPublicUrl = isDev()
 
 export const kDeploymentUrl = () => {
   if (isDev()) {
-    return 'http://localhost:3000'
+    return 'http://192.168.0.146:3000'
+    // return 'http://localhost:3000'
   }
 
   if (isProd()) {

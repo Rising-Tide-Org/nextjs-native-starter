@@ -9,7 +9,7 @@ import NextLink from 'next/link'
 import routes from 'lib/routes'
 import PromptList from '../PromptList'
 import Analytics from 'lib/analytics'
-import useFetchMany from 'hooks/useFetchMany'
+import useFetchMany from 'shared/hooks/useFetchMany'
 import { limit, query } from 'firebase/firestore'
 import { Entry } from 'types/Entry'
 

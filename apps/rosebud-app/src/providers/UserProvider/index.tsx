@@ -11,7 +11,7 @@ import {
 import { User, UserFlag } from 'types/User'
 import { daysSinceTimestamp } from 'util/date'
 import { migrateUserIfNeeded } from 'util/user'
-import useFetchOne from 'hooks/useFetchOne'
+import useFetchOne from 'shared/hooks/useFetchOne'
 import { User as AuthUser } from 'firebase/auth'
 import PageLoading from 'ui/global/PageLoading'
 import { updateRecord } from 'db/mutate'

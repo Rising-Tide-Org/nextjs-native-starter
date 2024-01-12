@@ -6,7 +6,7 @@ import {
   StatNumber,
   Text,
 } from '@chakra-ui/react'
-import useFetchOne from 'hooks/useFetchOne'
+import useFetchOne from 'shared/hooks/useFetchOne'
 import moment from 'moment'
 import { CollectionItemTopic } from 'types/Collection'
 import { Stat } from 'types/Stat'

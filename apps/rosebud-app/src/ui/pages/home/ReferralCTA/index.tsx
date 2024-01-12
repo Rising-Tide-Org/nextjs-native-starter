@@ -2,7 +2,7 @@ import { Button, Flex, Link, useDisclosure } from '@chakra-ui/react'
 import { useModalProvider } from 'providers/ModalProvider'
 import { HiOutlineChatBubbleOvalLeftEllipsis } from 'react-icons/hi2'
 import { IoGift } from 'react-icons/io5'
-import { kViewPadding } from 'ui/constants'
+import { kViewPadding } from 'shared/ui/constants'
 import { DiscordIcon } from 'ui/shared/Icon'
 import FeedbackModal from 'ui/shared/modals/FeedbackModal'
 

@@ -11,11 +11,11 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { IoIosClose } from 'react-icons/io'
-import useKeyboardShortcut from 'hooks/useShortcutKeyDown'
+import useKeyboardShortcut from 'shared/hooks/useShortcutKeyDown'
 import { useRouter } from 'next/router'
 import { useDebounce } from 'usehooks-ts'
 import { RbSearch } from 'ui/shared/Icon'
-import useIsMobile from 'hooks/useIsMobile'
+import useIsMobile from 'shared/hooks/useIsMobile'
 import Analytics from 'lib/analytics'
 
 type SearchInputProps = {

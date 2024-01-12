@@ -5,10 +5,6 @@ const config: CapacitorConfig = {
   appId: APP_BUNDLE_URL,
   appName: 'rosebud',
   webDir: 'out',
-  // For live reload: comment out server.
-  // server: {
-  //   url: 'http://YOUR_IP:3001',
-  // },
   bundledWebRuntime: false,
   plugins: {
     SplashScreen: {
@@ -20,7 +16,17 @@ const config: CapacitorConfig = {
     CapacitorCookies: {
       enabled: true,
     },
+    CapacitorHttp: {
+      enabled: true
+    }
   },
+}
+
+if (process.env.NODE_ENV === 'development') {
+  // enable live reload when dev'in on connected device
+  config.server = {
+    url: 'http://192.168.0.146:3000',
+  }
 }
 
 export default config

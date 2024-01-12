@@ -2,7 +2,7 @@ import { Box, Flex, IconButton, useToast } from '@chakra-ui/react'
 import { captureException } from '@sentry/nextjs'
 import { AnimatePresence } from 'framer-motion'
 import Analytics from 'lib/analytics'
-import { useNavigationProvider } from 'providers/NavigationProvider'
+import { useNavigationProvider } from 'shared/providers/NavigationProvider'
 import { useSummaryProvider } from 'providers/SummaryProvider'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import {

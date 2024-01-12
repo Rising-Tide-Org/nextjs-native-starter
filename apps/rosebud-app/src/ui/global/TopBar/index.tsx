@@ -10,9 +10,9 @@ import {
 import { useRouter } from 'next/router'
 import { ReactNode, useCallback } from 'react'
 import { FiChevronLeft } from 'react-icons/fi'
-import { kTopBarHeight } from 'ui/constants'
+import { kTopBarHeight } from 'shared/ui/constants'
 import theme from 'styles/theme'
-import { useNavigationProvider } from 'providers/NavigationProvider'
+import { useNavigationProvider } from 'shared/providers/NavigationProvider'
 
 type Props = {
   title: string

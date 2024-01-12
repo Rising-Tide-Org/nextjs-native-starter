@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { ReferralConversionStage } from 'constants/referral'
 import { fetchNextApi } from 'net/api'
 import Analytics from 'lib/analytics'
-import useLocalStorage from 'hooks/useLocalStorage'
+import useLocalStorage from 'shared/hooks/useLocalStorage'
 import { kLSAppPrefix } from 'constants/localStorage'
 import { firebaseAuth } from 'db'
 

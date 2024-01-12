@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import { useNavigationProvider } from 'providers/NavigationProvider'
+import { useNavigationProvider } from 'shared/providers/NavigationProvider'
 import { useCallback } from 'react'
 import { Identifiable } from 'types/Generic'
 import { ListView } from 'ui/core/ListView'

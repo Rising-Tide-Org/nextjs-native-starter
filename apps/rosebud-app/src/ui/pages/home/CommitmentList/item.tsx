@@ -5,7 +5,7 @@ import {
   Tooltip,
   useColorModeValue,
 } from '@chakra-ui/react'
-import useIsMobile from 'hooks/useIsMobile'
+import useIsMobile from 'shared/hooks/useIsMobile'
 import { useMemo } from 'react'
 import { IoIosCheckmarkCircle, IoMdThumbsUp } from 'react-icons/io'
 import { TiDelete } from 'react-icons/ti'

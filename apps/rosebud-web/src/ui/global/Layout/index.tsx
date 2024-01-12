@@ -3,12 +3,12 @@ import {
   kGlobalLayoutWidth,
   kGlobalLayoutWidthNarrow,
   kTabBarTopPadding,
-} from 'ui/constants'
+} from 'shared/ui/constants'
 import GlobalTabNavigation from '../Navigation/GlobalTabNavigation'
 import DesktopNavigationBar from '../Navigation/DesktopNavigationBar'
 import BannerProductHunt from './BannerProductHunt'
 import BannerSubscriptionIssue from './BannerSubscriptionIssue'
-import useIsMobile from 'hooks/useIsMobile'
+import useIsMobile from 'shared/hooks/useIsMobile'
 
 type PageProps = ChakraProps & {
   children: React.ReactNode

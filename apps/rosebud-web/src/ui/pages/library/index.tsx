@@ -2,11 +2,11 @@ import { VStack, Box, Tab, TabList, Tabs, Flex } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import PersonalizedPrompts from './PersonalizedPrompts'
 import GuidedJournals from './GuidedJournals'
-import { kViewPadding } from 'ui/constants'
+import { kViewPadding } from 'shared/ui/constants'
 import { PromptType } from 'types/Prompt'
 import { hiddenScrollBarCss } from 'styles/theme/components/scrollbar'
 import NavigationBar from 'ui/global/Navigation/NavigationBar'
-import useIsMobile from 'hooks/useIsMobile'
+import useIsMobile from 'shared/hooks/useIsMobile'
 import SmallCapsHeading from 'ui/core/SmallCapsHeading'
 
 type Props = {

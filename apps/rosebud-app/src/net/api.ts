@@ -2,9 +2,10 @@ import { IncomingMessage } from 'http'
 import isoFetch from 'isomorphic-unfetch'
 import { ApiResponse } from 'types/Api'
 import fetchBuilder from 'fetch-retry'
-import { kPublicUrl } from 'util/env'
+import { kDeploymentUrl } from 'util/env'
 import { detectRefusalText } from 'util/openai'
 import { ApiError } from 'next/dist/server/api-utils'
+import { Capacitor } from '@capacitor/core'
 
 const fetch = fetchBuilder(isoFetch)
 
@@ -17,22 +18,22 @@ function getNextApiUrl(path: string, req?: IncomingMessage) {
     // If the request object exists, use it.
     if (req) {
       const host = req.headers.host
+
       if (host?.startsWith('localhost')) {
         return `http://localhost:3000${path}`
       }
+
       return `https://${host}${path}`
     }
 
     // If the request object doesn't exist, use the `kPublicUrl` directly.
-    return `${kPublicUrl}${path}`
+    return `${kDeploymentUrl()}${path}`
   }
 
   // this is running client-side, so a relative path is fine as long as this is the web not native app
-  // return Capacitor.isNativePlatform() ? `http://localhost:3000${path}` : path
+  return Capacitor.isNativePlatform() ? `${kDeploymentUrl()}${path}` : path
 
-  // TEMP
-  return `http://192.168.0.146:3000${path}`
-  // TEMP
+  // return `http://localhost:3000${path}`
 }
 
 /**
@@ -52,6 +53,7 @@ export async function fetchNextApi<T>(
   const url = getNextApiUrl(path, req)
 
   console.log('==============================')
+  console.log('api url', url)
   console.log('cookies!', document.cookie)
   console.log('==============================')
 
@@ -66,10 +68,6 @@ export async function fetchNextApi<T>(
       error: Error | null,
       response: Response | null,
     ) => {
-      console.log('==============================')
-      console.log('retryon')
-      console.log('==============================')
-
       // Conditional for retrying for every request, the most impactful one here is !response.ok
       if (
         (Boolean(error) || !response || !response.ok) &&
@@ -88,7 +86,7 @@ export async function fetchNextApi<T>(
 
   console.log('==============================')
   console.log('actual resp', resp)
-  console.log(path)
+  console.log(url)
   console.log('==============================')
 
   return resp.json()

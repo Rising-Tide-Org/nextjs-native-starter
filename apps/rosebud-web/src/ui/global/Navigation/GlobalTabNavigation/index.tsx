@@ -24,7 +24,7 @@ import {
   kiOSBottomPadding,
   kTabBarHeightMobile,
   kViewPadding,
-} from 'ui/constants'
+} from 'shared/ui/constants'
 import { isIOS, isPWAInstalled } from 'util/device'
 
 type Tab = {

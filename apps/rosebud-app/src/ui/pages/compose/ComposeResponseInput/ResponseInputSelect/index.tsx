@@ -3,8 +3,8 @@ import { AnimatePresence } from 'framer-motion'
 import { useComposeProvider } from 'providers/ComposeProvider'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ComposeResponse } from 'types/Compose'
-import { kOptionSlideInTransition } from 'ui/constants'
-import MotionBox from 'ui/core/MotionBox'
+import { kOptionSlideInTransition } from 'shared/ui/constants'
+import MotionBox from 'shared/ui/core/MotionBox'
 import ResponseInputSelectOption from '../ResponseInputSelectOption'
 
 type Props = {

@@ -24,8 +24,8 @@ import ReferralsMenuItem from './ReferralsMenuItem'
 import NextLink from 'next/link'
 import navigator from 'lib/routes'
 import Analytics from 'lib/analytics'
-import { kMobileIconSize } from 'ui/constants'
-import useIsMobile from 'hooks/useIsMobile'
+import { kMobileIconSize } from 'shared/ui/constants'
+import useIsMobile from 'shared/hooks/useIsMobile'
 
 const NavHamburgerMenu = () => {
   const [showInstall, setShowInstall] = useState(false)

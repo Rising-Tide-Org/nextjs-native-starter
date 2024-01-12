@@ -1,5 +1,5 @@
 import { Button, Box } from '@chakra-ui/react'
-import { kViewPadding } from 'ui/constants'
+import { kViewPadding } from 'shared/ui/constants'
 import Layout from 'ui/global/Layout'
 import EmptyPageState from '../EmptyPageState'
 

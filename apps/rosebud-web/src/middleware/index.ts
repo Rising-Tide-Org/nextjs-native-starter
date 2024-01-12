@@ -1,6 +1,7 @@
 import tokenVerification from './tokenVerification'
 import allowedHttpMethods from './methods'
 import { use } from 'next-api-middleware'
+import cors from './cors'
 
 type MiddlewareOptionsType = {
   authenticated?: boolean
@@ -13,6 +14,7 @@ const withMiddleware = ({
 }: MiddlewareOptionsType = {}) => {
   return use(
     allowedHttpMethods(methods),
+    cors(),
     authenticated ? tokenVerification : []
   )
 }

@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useMemo } from 'react'
-import useFetchMany from 'hooks/useFetchMany'
+import useFetchMany from 'shared/hooks/useFetchMany'
 import { query, where } from 'firebase/firestore'
 import { CollectionItemTopic } from 'types/Collection'
 import { useEntryProvider } from 'providers/EntryProvider'

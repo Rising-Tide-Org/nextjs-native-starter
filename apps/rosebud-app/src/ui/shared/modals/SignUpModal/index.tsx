@@ -20,7 +20,7 @@ import { captureException as sentryCaptureException } from '@sentry/nextjs'
 import SignUpForm from 'ui/pages/signup/SignUpForm'
 import TopBar from 'ui/global/TopBar'
 import { ReferralConversionStage } from 'constants/referral'
-import { useReferralConversion } from 'hooks/useReferralConversion'
+import { useReferralConversion } from 'shared/hooks/useReferralConversion'
 
 const SignUpModal = () => {
   const triggerReferralStage = useReferralConversion()

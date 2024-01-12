@@ -1,6 +1,6 @@
 import { useModalProvider } from 'providers/ModalProvider'
 import { IoGiftOutline } from 'react-icons/io5'
-import { kMobileIconSize } from 'ui/constants'
+import { kMobileIconSize } from 'shared/ui/constants'
 import NavigationBarButton from '../NavigationBarButton'
 
 const NavigationBarGiftButton = () => {

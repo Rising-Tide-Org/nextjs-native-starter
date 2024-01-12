@@ -1,7 +1,7 @@
 import { useColorModeValue } from '@chakra-ui/react'
 import { ComponentProps } from 'react'
 import theme from 'styles/theme'
-import MotionBox from 'ui/core/MotionBox'
+import MotionBox from 'shared/ui/core/MotionBox'
 
 const PromptLabel = ({
   children,

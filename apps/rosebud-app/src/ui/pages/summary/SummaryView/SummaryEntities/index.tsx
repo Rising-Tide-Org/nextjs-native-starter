@@ -8,7 +8,7 @@ import AddEntityTag from './AddEntityTag'
 import { updateRecord } from 'db/mutate'
 import { arrayRemove, increment } from 'firebase/firestore'
 import { Entry } from 'types/Entry'
-import useFetchOne from 'hooks/useFetchOne'
+import useFetchOne from 'shared/hooks/useFetchOne'
 import Analytics from 'lib/analytics'
 
 type Props = {

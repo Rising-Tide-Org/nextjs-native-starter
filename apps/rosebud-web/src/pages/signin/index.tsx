@@ -20,7 +20,7 @@ import PageLoading from 'ui/global/PageLoading'
 import { useAuthProvider } from 'providers/AuthProvider'
 import { useEntryProvider } from 'providers/EntryProvider'
 import TopBar from 'ui/global/TopBar'
-import { kViewPadding } from 'ui/constants'
+import { kViewPadding } from 'shared/ui/constants'
 import NavigationBarSignedOut from 'ui/global/Navigation/NavigationBar/NavigationBarSignedOut'
 import Panel from 'ui/core/Panel'
 

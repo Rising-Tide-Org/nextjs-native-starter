@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react'
-import MotionBox from 'ui/core/MotionBox'
+import MotionBox from 'shared/ui/core/MotionBox'
 import SmallCapsHeading from 'ui/core/SmallCapsHeading'
 
 type Props = {

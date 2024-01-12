@@ -16,13 +16,13 @@ import {
 } from '@chakra-ui/react'
 import { createRecord, updateRecord } from 'db/mutate'
 import { arrayUnion, increment, query, where } from 'firebase/firestore'
-import useFetchMany from 'hooks/useFetchMany'
-import useShortcutKeyDown from 'hooks/useShortcutKeyDown'
+import useFetchMany from 'shared/hooks/useFetchMany'
+import useShortcutKeyDown from 'shared/hooks/useShortcutKeyDown'
 import Analytics from 'lib/analytics'
 import { useCallback, useState } from 'react'
 import { CollectionItemTopic, CollectionItemTopicType } from 'types/Collection'
 import { Entry } from 'types/Entry'
-import MotionBox from 'ui/core/MotionBox'
+import MotionBox from 'shared/ui/core/MotionBox'
 import { titleCase } from 'util/string'
 
 type Props = BoxProps & {

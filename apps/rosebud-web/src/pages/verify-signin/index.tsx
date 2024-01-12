@@ -13,7 +13,7 @@ import { signInWithEmailLink } from 'firebase/auth'
 import { parseFirebaseError } from 'util/firebase'
 import TopBar from 'ui/global/TopBar'
 import NextLink from 'next/link'
-import { kViewPadding } from 'ui/constants'
+import { kViewPadding } from 'shared/ui/constants'
 import Panel from 'ui/core/Panel'
 
 type FormElements = HTMLFormElement &

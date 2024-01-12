@@ -1,5 +1,5 @@
 import { Box, Flex, useColorModeValue, useTheme } from '@chakra-ui/react'
-import { kNavBarHeight, kNavBarHeightMobile, kViewPadding } from 'ui/constants'
+import { kNavBarHeight, kNavBarHeightMobile, kViewPadding } from 'shared/ui/constants'
 
 const NavLayoutContainer = ({ children }: { children: React.ReactNode }) => {
   const theme = useTheme()

@@ -1,5 +1,5 @@
 import { kLSAppPrefix } from 'constants/localStorage'
-import useLocalStorage from 'hooks/useLocalStorage'
+import useLocalStorage from 'shared/hooks/useLocalStorage'
 import moment from 'moment'
 import { useEntryProvider } from 'providers/EntryProvider'
 import { useModalProvider } from 'providers/ModalProvider'

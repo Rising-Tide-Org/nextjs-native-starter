@@ -1,6 +1,6 @@
 import { Box, useColorMode, useTheme } from '@chakra-ui/react'
 import { AnimatePresence } from 'framer-motion'
-import useIsMobile from 'hooks/useIsMobile'
+import useIsMobile from 'shared/hooks/useIsMobile'
 import { useRouter } from 'next/router'
 import { ParsedUrlQuery } from 'querystring'
 import React, {
@@ -12,8 +12,8 @@ import React, {
   useMemo,
   useRef,
 } from 'react'
-import { kTabBarTopPadding } from 'ui/constants'
-import MotionBox from 'ui/core/MotionBox'
+import { kTabBarTopPadding } from 'shared/ui/constants'
+import MotionBox from 'shared/ui/core/MotionBox'
 
 type ViewState = {
   view: ReactNode

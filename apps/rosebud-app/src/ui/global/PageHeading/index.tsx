@@ -1,5 +1,5 @@
 import { Heading, Flex, FlexProps } from '@chakra-ui/react'
-import { kViewPadding } from 'ui/constants'
+import { kViewPadding } from 'shared/ui/constants'
 
 const PageHeading = ({ children, ...rest }: FlexProps) => {
   return (
